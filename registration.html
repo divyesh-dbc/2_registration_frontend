@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Registration Form </title>
+
+</head>
+
+<body class="form">
+    <div class="row" style="display: none;" id="register_div">
+        <div class="col-sm-6 offset-sm-3 register_div">
+            <h3 class="form_head"> Registration Form</h3>
+            <form method="post" id="register_form" name="registeration_form" class="needs-validation" novalidate>
+                <div class="form-group row">
+                    <label for="firstname" class="col-sm-3 col-form-label">FirstName:</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="firstname" class="form-control" id="firstname"
+                            placeholder="Enter your first name" required autofocus autocomplete="off">
+                        <div class="invalid-feedback">
+                            * FirstName is Required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lastname" class="col-sm-3 col-form-label">LastName:</label>
+                    <div class="col-sm-9">
+                        <input type="text" autocomplete="off" class="form-control" id="lastname" name="lastname"
+                            placeholder="Enter Your Last Name" required>
+                        <div class="invalid-feedback">
+                            *LastName is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="It Should contain @,." required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <div class="invalid-feedback">
+                            *Email is Required.
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="mobile" class="col-sm-3 col-form-label">Mobile:</label>
+                    <div class="col-sm-9">
+                        <input type="text" autocomplete="off" class="form-control" name="mobile" id="mobile"
+                            minlength="10" maxlength="10" placeholder="Only 10 digit are allowed" required
+                            pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+                        <div class="invalid-feedback">
+                            *Mobile NO. is Required.
+                        </div>
+                        <div class="invalid-feedback" id="mobile_error" style="display: none;">
+                            *mobile number must be digits.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="gender" class="col-sm-3 col-form-label">Gender:</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male1" value="male" required>
+
+                            <label class="form-check-label" for="male1">male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female1" value="female"
+                                required>
+                            <label class="form-check-label" for="female1">female</label>
+                            <div class="invalid-feedback">
+                                *Gender is Required.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="date1" class="col-sm-3 col-form-label">Date of Birth:</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="date1" name="date1" required>
+                        <div class="invalid-feedback">
+                            *Date of Birth is Required.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label for="address" class="col-sm-3 col-form-label">Address:</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="address" name="address" required></textarea>
+                        <div class="invalid-feedback">
+                            *Address is Required.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <label for="city" class="col-sm-3 col-form-label">City:</label>
+                    <div class="col-sm-9">
+                        <input type="text" autocomplete="off" class="form-control" name="city" id="city"
+                            placeholder="Enter Your city" required>
+                        <div class="invalid-feedback">
+                            *City is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="area pin" class="col-sm-3 col-form-label">Area PIN:</label>
+                    <div class="col-sm-9">
+                        <input type="text" autocomplete="off" class="form-control" name="pin" id="pin"
+                            placeholder="Enter Your Area PIN" required>
+                        <div class="invalid-feedback">
+                            *Area PIN is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="state" class="col-sm-3 col-form-label">State:</label>
+                    <div class="col-sm-9">
+                        <input type="text" autocomplete="off" class="form-control" name="state" id="state"
+                            placeholder="Enter Your State" required>
+                        <div class="invalid-feedback">
+                            *State is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="qualification" class="col-sm-3 col-form-label">Qualification:</label>
+                    <div class="col-sm-9">
+                        <select id="qualification" class="custom-select" name="qualification" required>
+                            <option value="">Select</option>
+                            <option value="bba">BBA</option>
+                            <option value="bca">BCA</option>
+                            <option value="bcom">BCom</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            *Qualification is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Specialization:</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="computerscience"
+                                value="computerscience" name="specialization">
+                            <label class="form-check-label" for="computerscience">Computer Science</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="informationtechnology"
+                                value="informationtechnology" name="specialization">
+                            <label class="form-check-label" for="informationtechnology">Information
+                                Technology</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="computerarchitecture"
+                                value="computerarchitecture" name="specialization">
+                            <label class="form-check-label" for="computerarchitecture">Computer Architecture</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="telecommunication"
+                                value="telecommunication" name="specialization">
+                            <label class="form-check-label" for="tele communication">Tele Communication</label>
+
+                        </div>
+                        <div class="invalid-feedback" id="spec_error" style="display: none;">
+                            * Atleast one is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Enter your password" required>
+                        <!-- <i class="fa-solid fa-eye"></i> -->
+                        <div class="invalid-feedback">
+                            *Password is Required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="confirmpassword" class="col-sm-3 col-form-label">Confirm Password:</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="confirmpassword"
+                            placeholder="Re-Enter your password" name="repassword" required>
+                        <div class="invalid-feedback">
+                            *re-password is Required.
+                        </div>
+                        <div class="invalid-feedback" id="pass_error" style="display: none;">
+                            *Password and confirm password not match.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Photo" class="col-sm-3 col-form-label">Photo</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="user_image" name="user_image" required>
+                        <div class="invalid-feedback">
+                            *Photo is required.
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="id" name="id" value="" />
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary" id="Submit">Registered</button>
+                        <button type="submit" class="btn btn-primary" id="Cancle">Cancle</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-10 offset-sm-1 bg-white p-0 mb-5">
+        <div class="title_table">
+            <h1 style="text-align: center; background-color: black; color: white;" class="mt-3 mb-0">User Management
+            </h1>
+
+
+            <div class="d-inline-block w-100 p-2">
+                <div class="input-group float-left" style="width: 400px;">
+                    <div class="d-flex justify-content-center">
+                        <div class="loading" id="loader" style="display: none;">Loading&#8230;</div>
+                    </div>
+                    <input type="text" autocomplete="off" id="search_text" class="form-control col-sm-7"
+                        placeholder="Search..">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2" onclick="getList()" style="cursor: context-menu
+
+                        ;">Search</span>
+                    </div>
+                    <span class="input-group-text ml-2" id="clear_search_text" style="cursor: context-menu
+
+                    ;">Clear</span>
+
+                </div>
+                <button type="submit" class="btn btn-secondary btn-md float-right" id="AddButton">Add New User</button>
+            </div>
+        </div>
+
+        <div class="overflow-auto">
+            <table class="table table-bordered mb-0 " id="data_table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="sorting asc" data-column="u.firstname" aria-controls="data_table"
+                            aria-sort="ascending">FirstName</th>
+                        <th scope="col" class="sorting" data-column="u.lastname" aria-controls="data_table"
+                            aria-sort="ascending">LastName</th>
+                        <th scope="col" class="sorting" data-column="u.email" aria-controls="data_table"
+                            aria-sort="ascending">Email</th>
+                        <th scope="col" class="sorting" data-column="u.mobile" aria-controls="data_table"
+                            aria-sort="ascending">Mobile</th>
+                        <th scope="col" class="sorting" data-column="u.gender" aria-controls="data_table"
+                            aria-sort="ascending">Gender</th>
+                        <th scope="col" class="sorting" data-column="u.date1" aria-controls="data_table"
+                            aria-sort="ascending">Date of Birth</th>
+                        <th scope="col" class="sorting" data-column="u.city" aria-controls="data_table"
+                            aria-sort="ascending">City</th>
+                        <th scope="col" class="sorting" data-column="u.pin" aria-controls="data_table"
+                            aria-sort="ascending">Area Pin</th>
+                        <th scope="col" class="sorting" data-column="u.state" aria-controls="data_table"
+                            aria-sort="ascending">State</th>
+                        <th scope="col" class="sorting" data-column="u.qualification" aria-controls="data_table"
+                            aria-sort="ascending">Qualification</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="no_data">
+                        <td colspan="11">No data found</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <nav aria-label="Page navigation example ">
+                <ul class="pagination pagination-lg justify-content-end mr-3" id="paginated-list" data-current-page="1">
+                    <li class="page-item ">
+                        <a class="page-link" id="prevpage" href="#">&laquo;</a>
+                    </li>
+                    <li class="page-item"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="page-link">2</a></li>
+                    <li class="page-item"><a class="page-link">3</a></li>
+
+                    <li class="page-item">
+                        <a class="page-link" id="nextpage" href="#">&raquo;</a>
+                    </li>
+                </ul>
+
+            </nav> -->
+
+            <nav aria-label="...">
+                <div id="page_div" class="float-right m-2">
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.socket.io/4.5.3/socket.io.min.js"></script>
+    <!-- node_modules/socket.io/client-dist/socket.io.js -->
+    <!-- <script src="D:\node_api\node_modules\socket.io-client\dist\socket.io.min.js"></script> -->
+    <!-- <script src="http://localhost:3000/socket.io/socket.io.min.js"></script> -->
+    <script rel="stylesheet" src="pagination_custom.js"></script>
+
+
+    <script>
+        const base_url = "http://localhost:3000/api/v1/";
+        var socket = io("http://localhost:3000");
+        var listData = [];
+        var record_per_page = 5;
+        var current_page = 1;
+        var sort = "";
+        var sort_direction = "";
+
+        $(document).ready(function () {
+            socket.emit('test', "This is text message from front");
+            socket.on('from_backend', (msg) => {
+                console.log('from_backend: ' + msg);
+            });
+            document.getElementById("date1").max = "2022-11-08";
+
+            // user_image
+            $(document).on("change", "#user_image", function (e) {
+
+                var myFile = $(this).prop('files');
+                console.log("myFile", myFile);
+                validateImage(myFile)
+
+            })
+            $(document).on("keypress", "#search_text", function (event) {
+                // If the user presses the "Enter" key on the keyboard
+                if (event.key === "Enter") {
+
+                    // Cancel the default action, if needed
+                    getList()
+                }
+            });
+            //Sorting Start
+            $(document).on("click", ".sorting", function () {
+                sort = $(this).attr("data-column");
+                var hasAsc = $(this).hasClass("asc");
+                var hasDesc = $(this).hasClass("desc");
+                if (!hasAsc && !hasDesc) {
+                    sort_direction = "asc";
+                } else if (hasAsc) {
+                    sort_direction = "desc";
+                } else if (hasDesc) {
+                    sort_direction = "asc";
+                }
+                $(this).closest("tr").find("th").removeClass("asc").removeClass("desc");
+                $(this).addClass(sort_direction);
+
+                console.log("sort", sort);
+                console.log("sort_direction", sort_direction);
+                getList();
+            })
+            // End pagination
+
+            /* get list api */
+            getList();
+        })
+        function validateImage(myFile) {
+            console.log("myFile", myFile);
+            if (myFile.length) {
+                var allowed_ext = ['jpeg', 'jpg', 'png', 'svg'];
+                var file_ext = myFile[0].name.split('.').pop().toLowerCase();
+                var isValidFile = false;
+                for (var index in allowed_ext) {
+                    if (file_ext === allowed_ext[index]) {
+                        isValidFile = true;
+                        break;
+                    }
+                }
+                if (!isValidFile) {
+                    $("#user_image").val("")
+                    swal({
+                        title: "Error",
+                        text: "Invalid File Extension, Please upload valid file",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                }
+
+                var file_size = myFile[0].size;
+                var file = Math.round((file_size / 1024));
+                if (file > 1024) {
+                    $("#user_image").val("")
+                    swal({
+                        title: "Error",
+                        text: "Image size is very large",
+                        icon: "error",
+                        button: "Ok",
+                    });
+                }
+            }
+        }
+
+        //start getlist--
+        function getList() {
+            // $("#loader").style.display = "block";
+            var search_text = $("#search_text").val()
+
+            $.ajax({
+                method: "POST",
+                url: base_url + "tutorials/getAll",
+                data: { search_text: search_text, current_page: current_page, record_per_page: record_per_page, sort: sort, sort_direction: sort_direction },
+                beforeSend: function () {
+                    $("#loader").show();
+                },
+                success: function (result) {
+                    $("#data_table tbody").html("")
+                    listData = result.data;
+                    for (let index = 0; index < listData.length; index++) {
+                        listData[index].specialization = listData[index].specialization.split(",");
+                        appendToTable(listData[index]);
+                    }
+                    var paginationData = {
+                        recordPerPage: record_per_page,
+                        currentPage: current_page,
+                        totalRecord: result.totalRecords
+                    }
+                    $(".pagination li a").unbind();
+                    // start pagination
+                    $("#page_div").html(pagination(paginationData));
+                    /* $('#page_div').Pagination({ // id to initial draw and use pagination
+                        size: +result.totalRecords, // size of list input
+                        from: +current_page,
+                        // to: +result.totalRecords,
+                        pageShow: 5, // 5 page-item per page
+                        // page: +current_page, // current page (default)
+                        limit: +record_per_page, // current limit show perpage (default)
+
+                    }, function (obj) { // callback function, you can use it to re-draw table or something
+                        $('#info').html('Current page: ' + obj.page);
+                        current_page = obj.page;
+                        getList()
+                    }); */
+                },
+                error: function (error) { // if error occured
+                    console.log("error", error);
+                },
+                complete: function () {
+                    $("#loader").hide();
+                },
+            })
+            $("#page_div").unbind('click').on("click", "li a", function () {
+                var page = $(this).attr("data-page");
+                console.log("page", page);
+                console.log("listData", listData);
+                current_page = page;
+                // console.log("current_page", current_page);
+                getList();
+            })
+        }
+
+
+
+
+        //addevintlistener
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        var checkboxes = document.querySelectorAll('input[name="specialization"]');
+                        var checkedOne = Array.prototype.slice.call(checkboxes).some(x => x.checked);
+                        if (!checkedOne) {
+                            document.getElementById("spec_error").style.display = "block";
+                        } else {
+                            document.getElementById("spec_error").style.display = "none";
+                        }
+                        var password = $('#password').val();
+                        var cpassword = $('#confirmpassword').val();
+                        if (password && cpassword && password != cpassword) {
+                            document.getElementById("pass_error").style.display = "block";
+                        } else {
+                            document.getElementById("pass_error").style.display = "none";
+                        }
+                        // var pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                        // if (!pattern) {
+                        //     document.getElementById("mobile_error").style.display = "none";
+                        // }else{
+                        //     document.getElementById("mobile_error").style.display = "block";
+
+                        // }
+                        if (form.checkValidity() && checkedOne && password == cpassword) {
+                            saveData();
+                            $("#register_div").slideUp();
+                        }
+                        // validateImage()
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+
+        })();
+
+        // start Save Data function
+        function saveData() {
+            var data = $('#register_form').serializeArray().reduce(function (obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            }, {});
+
+            var chedked = $("input[name='specialization']:checked");
+            var specialization = [];
+            for (let index = 0; index < chedked.length; index++) {
+                const element = chedked[index];
+                specialization.push($(chedked[index]).val());
+            }
+            data.specialization = specialization.join(" ,");
+            var myFile = $("#user_image").prop('files');
+            console.log("myFile", myFile);
+
+            let formData = new FormData();
+            formData.append("firstname", data.firstname);
+            formData.append("lastname", data.lastname);
+            formData.append("email", data.email);
+            formData.append("mobile", data.mobile);
+            formData.append("gender", data.gender);
+            formData.append("date1", data.date1);
+            formData.append("address", data.address);
+            formData.append("city", data.city);
+            formData.append("pin", data.pin);
+            formData.append("state", data.state);
+            formData.append("qualification", data.qualification);
+            formData.append("specialization", data.specialization.toString());
+            formData.append("password", data.password);
+
+
+            if (myFile.length) {
+                formData.append("user_image", myFile[0], myFile[0].name);
+            }
+            // return true;
+
+            // appendToTable(data);
+            var method = data.id > 0 ? "PUT" : "POST";
+            console.log("method", method);
+            $.ajax({
+                method: method,
+                url: base_url + "tutorials/" + data.id,
+                // contentType: false,
+                // dataType: 'json',
+                // contentType: 'multipart/form-data',
+                // enctype: 'multipart/form-data',
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                processData: false,
+                data: formData,
+                beforeSend: function () {
+                    // setting a timeout
+                    // $(placeholder).addClass('loading');
+                    // i++;
+                    // swal({
+                    //     title: "Sucess",
+                    //     text: "Your data add or edit sucessfully",
+                    //     icon: "success",
+                    //     button: "Ok",
+                    // });
+                },
+                success: function (result) {
+                    $("#register_form").trigger("reset");
+                    $("#id").val("");
+                    getList();
+                    swal({
+                        title: "Sucess",
+                        text: "Your data add or edit sucessfully",
+                        icon: "success",
+                        button: "Ok",
+                    });
+
+
+
+                },
+                error: function (error) {
+                    console.log("error", error);
+                },
+                complete: function () {
+
+                },
+            })
+        }
+
+        //Append to table
+        function appendToTable(formData) {
+            $("#no_data").remove();
+            var html = `
+                        <td scope="col">${formData.firstname}</td>
+                        <td scope="col">${formData.lastname}</td>
+                        <td scope="col">${formData.email}</td>
+                        <td scope="col">${formData.mobile}</td>
+                        <td scope="col">${formData.gender}</td>
+                        <td scope="col">${formData.date1}</td>
+                        <td scope="col">${formData.city}</td>
+                        <td scope="col">${formData.pin}</td>
+                        <td scope="col">${formData.state}</td>
+                        <td scope="col">${formData.qualification}</td>
+                        <td>
+                            <button id="DeleteButton" data-index="${formData.id}">delete</button>
+                            <button id="EditButton" data-index="${formData.id}">Edit</button>
+                        </td>
+                    `;
+            if ($("#data_table tbody #tr_" + formData.id).length) {
+                $("#data_table tbody #tr_" + formData.id).html(html);
+
+            } else {
+                $("#data_table tbody").append(`<tr id="tr_${formData.id}">${html}</tr>`);
+                // listData.push(formData);
+            }
+            var index = listData.findIndex(function (item) { return item.id == formData.id });
+            if (index > -1) {
+                listData[index] = formData;
+            } else {
+                listData.push(formData);
+            }
+        };
+        //Some Onclick events
+        //search btn click event
+        $("#data_table").on("click", "#search_btn", function () {
+            listData()
+        })
+
+        $("#clear_search_text").on("click", function () {
+            $("#search_text").val("")
+            getList()
+        })
+
+        //delete btn click event
+        $("#data_table").on("click", "#DeleteButton", function () {
+            var id = $(this).attr("data-index")
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this User!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            method: "DELETE",
+                            url: base_url + "tutorials/" + id,
+
+                            success: function (result) {
+
+                                getList();
+
+                            },
+
+                            error: function (error) { // if error occured
+                                console.log("error", error);
+                            },
+                            complete: function () {
+                                swal("Poof! User has been deleted!", {
+                                    icon: "success",
+                                });
+
+                            },
+                        })
+
+                    }
+                });
+
+            // var id = $(this).attr("data-index");
+            // var index = listData.findIndex(function (item) { return item.id == id });
+            // listData.splice(index, 1);
+            // console.log(listData);
+            // $(this).closest("tr").remove();
+        });
+
+        //edit button click event
+        $("#data_table").on("click", "#EditButton", function () {
+            $("#register_div").slideDown();
+            var id = $(this).attr("data-index");
+            var item = listData.filter(function (item) { return item.id.toString() == id.toString() });
+            if (item.length) {
+                var data = item[0];
+
+                $("#id").val(data.id);
+                $("#firstname").val(data.firstname);
+                $("#lastname").val(data.lastname);
+                $("#email").val(data.email);
+                $("#mobile").val(data.mobile);
+
+                $("#" + data.gender + "1").prop("checked", "checked");
+                // var dt = new Date(data.date);
+                // console.log((+dt.getMonth() > 9 ? "" : "0" + (+dt.getMonth() + 1)))
+                // $("#date").val(dt.getFullYear() + '-' + (+dt.getMonth() > 9 ? "" : "0" + (+dt.getMonth() + 1)) + '-' + (+dt.getDate() > 9 ? "" : "0" + dt.getDate()));
+                // var photo = this.files[0];
+                var today = new Date(data.date1);
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+                today = yyyy + '-' + mm + '-' + dd;
+
+                $("#date1").val(today);
+                $("#address").val(data.address);
+                $("#city").val(data.city);
+                $("#pin").val(data.pin);
+                $("#state").val(data.state);
+                $("#qualification").val(data.qualification);
+                $("#specialization").val(data.specialization);
+                $("#password").val(data.password);
+                $("#confirmpassword").val(data.password);
+
+                // $("#photo").val(photo);
+
+                var specs = data.specialization;
+                for (let index = 0; index < specs.length; index++) {
+                    $("#" + specs[index]).prop("checked", "checked");
+                }
+                $("html, body").animate({ scrollTop: 100 });
+
+
+            }
+        });
+        $(document).on("click", "#AddButton", function () {
+            $("#register_form").trigger("reset");
+            $("#id").val("");
+            $("#register_div").slideDown();
+        });
+        $(document).on("click", "#Cancle", function () {
+            $("#register_div").slideUp();
+        });
+    </script>
+</body>
+
+</html>
+<!-- // $.ajax({
+    //     method: "POST",
+    //     url: "some.php",
+    //     data: data
+    // })
+    //     .done(function (msg) {
+    //         alert("Data Saved: " + msg);
+    //     });
+    // data.id = listData.length + 1;
+    // if (data.id > 0) {
+
+    // } else {
+    //     listData.push(data);
+    // } -->
